@@ -388,8 +388,8 @@ Content-Type: application/json
     "type": "like"
 }
 ```
-**Avaliable type ** 
-    like,love,haha,wow,sad,angry
+**Avaliable type:**  `like,love,haha,wow,sad,angry`
+   
 
 **Response (200):**
 ```json
