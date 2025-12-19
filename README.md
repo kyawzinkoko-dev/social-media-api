@@ -16,7 +16,7 @@
 1. **Clone the repository**
    ```bash
    git clone https://github.com/kyawzinkoko-dev/social-media-api
-   cd social-media-backend
+   cd social-media-api
    ```
 
 2. **Install dependencies**
