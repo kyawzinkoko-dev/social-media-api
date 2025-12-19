@@ -58,11 +58,6 @@
    ```bash
    php artisan serve
    ```
-   
-   The API will be available at `http://localhost:8000`
-
-## Database Schema
-
 
 
 ## API Document
@@ -79,8 +74,8 @@ Create a new user account.
 **Request Body:**
 ```json
 {
-    "name": "John Doe",
-    "email": "john@example.com",
+    "name": "Kyaw Zin ",
+    "email": "kyaw@example.com",
     "password": "password123",
     "password_confirmation": "password123"
 }
@@ -91,8 +86,8 @@ Create a new user account.
 {
     "user": {
         "id": 1,
-        "name": "John Doe",
-        "email": "john@example.com"
+        "name": "Kyaw Zin ",
+        "email": "kyaw@example.com"
     },
     "token": "eyJ0eXAiOiJKV1QiLCJhbGc..."
 }
@@ -113,7 +108,7 @@ Authenticate an existing user.
 **Request Body:**
 ```json
 {
-    "email": "john@example.com",
+    "email": "kyaw@example.com",
     "password": "password123"
 }
 ```
@@ -124,8 +119,8 @@ Authenticate an existing user.
     "token": "eyJ0eXAiOiJKV1QiLCJhbGc...",
     "user": {
         "id": 1,
-        "name": "John Doe",
-        "email": "john@example.com"
+        "name": "Kyaw Zin ",
+        "email": "kyaw@example.com"
     }
 }
 ```
@@ -174,9 +169,9 @@ Authorization: Bearer {token}
 ```json
 {
     "id": 1,
-    "name": "John Doe",
-    "email": "john@example.com",
-    "created_at": "2024-01-15T10:30:00.000000Z",
+    "name": "Kyaw Zin ",
+    "email": "kyaw@example.com",
+    "created_at": "2025-12-19",
     "post_count": 5,
     "reaction_count": 12,
     "comment_count": 8
@@ -213,8 +208,8 @@ image: [file] (optional)
     "title": "My First Post",
     "content": "This is the content of my post",
     "image": "posts/abc123.jpg",
-    "created_at": "2024-01-15T10:30:00.000000Z",
-    "updated_at": "2024-01-15T10:30:00.000000Z"
+    "created_at": "2025-12-18",
+    "updated_at": "2025-12-18"
 }
 ```
 
@@ -248,8 +243,8 @@ Content-Type: application/json
     "title": "Updated Title",
     "content": "Updated content",
     "image": "new-image-url.jpg",
-    "created_at": "2024-01-15T10:30:00.000000Z",
-    "updated_at": "2024-01-15T11:00:00.000000Z"
+    "created_at": "2025-12-18",
+    "updated_at": "2025-12-18"
 }
 ```
 
@@ -286,8 +281,8 @@ Authorization: Bearer {token}
             "title": "My Post",
             "content": "Post content",
             "image": "posts/image.jpg",
-            "created_at": "2024-01-15T10:30:00.000000Z",
-            "updated_at": "2024-01-15T10:30:00.000000Z"
+            "created_at": "2025-12-18",
+            "updated_at": "2025-12-18"
         }
     ],
     "current_page": 1,
@@ -319,10 +314,10 @@ Retrieve all posts with author info, reaction count, and comment count.
             "title": "Sample Post",
             "content": "This is a sample post content",
             "image": "posts/image.jpg",
-            "created_at": "2024-01-15T10:30:00.000000Z",
+            "created_at": "2025-12-18",
             "author": {
                 "id": 1,
-                "name": "John Doe"
+                "name": "Kyaw Zin "
             },
             "reaction_count": 5,
             "comment_count": 3
@@ -362,8 +357,8 @@ Content-Type: application/json
     "post_id": 1,
     "user_id": 1,
     "content": "This is a great post!",
-    "created_at": "2024-01-15T10:30:00.000000Z",
-    "updated_at": "2024-01-15T10:30:00.000000Z"
+    "created_at": "2025-12-18",
+    "updated_at": "2025-12-18"
 }
 ```
 
@@ -393,6 +388,8 @@ Content-Type: application/json
     "type": "like"
 }
 ```
+**Avaliable type ** 
+    like,love,haha,wow,sad,angry
 
 **Response (200):**
 ```json
@@ -414,53 +411,6 @@ Content-Type: application/json
 ```json
 {
     "error": "Post not found"
-}
-```
-
----
-
-## Error Responses
-
-### Validation Errors (422)
-```json
-{
-    "message": "The given data was invalid.",
-    "errors": {
-        "email": [
-            "The email field is required."
-        ],
-        "password": [
-            "The password must be at least 8 characters."
-        ]
-    }
-}
-```
-
-### Unauthorized (401)
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### Forbidden (403)
-```json
-{
-    "error": "You are not authorized to perform this action"
-}
-```
-
-### Not Found (404)
-```json
-{
-    "error": "Resource not found"
-}
-```
-
-### Server Error (500)
-```json
-{
-    "error": "Internal server error"
 }
 ```
 
